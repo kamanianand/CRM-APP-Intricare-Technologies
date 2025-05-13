@@ -70,7 +70,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 
-## Videos
+## Videos of practical task
 
-1. https://youtu.be/0AurW4z-IOI
-2. https://youtu.be/Vgq81mYG60s
+1. Custom Fields - https://youtu.be/0AurW4z-IOI
+2. Contacts - https://youtu.be/Vgq81mYG60s
+3. Full Video Merged Task - https://youtu.be/UFebmTp74Ik
