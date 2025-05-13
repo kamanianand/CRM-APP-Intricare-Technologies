@@ -32,10 +32,6 @@
                         <td>{{ $contact->email }}</td>
                     </tr>
                     <tr>
-                        <th>Phone</th>
-                        <td>{{ $contact->phone }}</td>
-                    </tr>
-                    <tr>
                         <th>Gender</th>
                         <td>{{ ucfirst($contact->gender) }}</td>
                     </tr>
@@ -83,28 +79,13 @@
                         <tr>
                             <th>Merged Contact</th>
                             <th>Merge Date</th>
-                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($contact->mergedAsMaster as $merged)
                         <tr>
-                            <td>{{ $merged->mergedContact->name }} ({{ $merged->mergedContact->email }})</td>
+                            <td>{{ $merged->mergedContact->name }} ({{ $merged->mergedContact->email }}) - ({{ $merged->mergedContact->phone }})</td>
                             <td>{{ $merged->created_at->format('Y-m-d H:i') }}</td>
-                            <td>
-                                <button class="btn btn-sm btn-info" data-bs-toggle="collapse" data-bs-target="#mergeDetails{{ $merged->id }}">
-                                    Show Details
-                                </button>
-                                <div id="mergeDetails{{ $merged->id }}" class="collapse mt-2">
-                                    <ul>
-                                        @foreach($merged->merged_data as $field => $details)
-                                            @if(!is_array($details))
-                                                <li><strong>{{ ucfirst(str_replace('_', ' ', $field)) }}:</strong> {{ $details['from'] }} → {{ $details['to'] }}</li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -72,6 +72,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
+        // echo "<pre>"; print_r($contact->toArray()); exit;
         return view('contacts.show', compact('contact'));
     }
 
